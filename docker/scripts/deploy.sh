@@ -3,7 +3,7 @@
 UUID=$(echo $RANDOM | tr '[0-9]' '[a-zA-Z]')
 DOCKER_IMAGE=user1m/dockerbot
 
-echo "Your bot endpoint is: $(dockerbot-$UUID)..."
+echo "Your bot endpoint is: dockerbot-$UUID ..."
 
 az group create --name dockerbot-$UUID --location "westus"
 
@@ -34,7 +34,7 @@ az bot create --kind registration -n dockerbot-$UUID -g dockerbot-$UUID \
 
 ## CI/CD
 ### https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-ci-cd
-echo "Take this URL and create a Docker Hub WebHook..."
+echo "Take the CI_CD_URL below and create a Docker Hub Webhook..."
 az webapp deployment container config --name dockerbot-$UUID --resource-group dockerbot-$UUID --enable-cd true
 # az webapp deployment container show-cd-url --name dockerbot-$UUID --resource-group dockerbot-$UUID
 

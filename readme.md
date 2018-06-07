@@ -1,5 +1,9 @@
 # DockerBot
 
+## Prereqs:
+
+* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+
 
 ## Learning outcomes
 
@@ -81,7 +85,7 @@ az bot create --kind registration -n dockerbot-$UUID -g dockerbot-$UUID \
 --appid $DOCKERBOT_ID --password $DOCKERBOT_PW \
 --display-name DockerBot \
 --description "Demo bot running on docker" \
--e https://dockerbot.azurewebsites.net/api/messages \
+-e https://dockerbot-$UUID.azurewebsites.net/api/messages \
 --msbot true
 ```
 ```
@@ -101,3 +105,5 @@ az webapp restart --resource-group dockerbot-$UUID  --name dockerbot-$UUID
 Your bot messaging endpoint will be available at: `https://dockerbot-$UUID.azurewebsites.net/api/messages`
 
 Open your [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect to that endpoint with the bot's `MICROSOFT_APP_ID` and `MICROSOFT_APP_PASSWORD`
+
+**NOTE:** It takes a couple minutes (5+) for everything to be setup so the bot can respond to you.
