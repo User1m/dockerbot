@@ -1,0 +1,29 @@
+{
+  "name": "skihousebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon lib/app.js",
+    "start": "node lib/app.js",
+    "watch": "tsc -w -p tsconfig.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/superagent": "^3.8.0",
+    "botbuilder": "^4.0.0-preview1.2",
+    "botbuilder-ai": "^4.0.0-preview1.2",
+    "botbuilder-prompts": "^4.0.0-preview1.2",
+    "dotenv": "^6.0.0",
+    "request-promise-native": "^1.0.5",
+    "restify": "^7.2.0",
+    "superagent": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/restify": "^7.2.0",
+    "nodemon": "^1.17.5"
+  }
+}
